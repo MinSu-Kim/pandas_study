@@ -14,4 +14,4 @@ print(type(df), df, sep='\n', end='\n\n')
 
 # df의 인덱스, 컬럼 출력
 print('df의 인덱스', df.index, sep='\n', end='\n\n')
-print('df의 컬럼',df.columns, sep='\n')
+print('df의 컬럼', df.columns, sep='\n')

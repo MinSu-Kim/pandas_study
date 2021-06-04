@@ -9,6 +9,7 @@ df = pd.DataFrame(exam_data)
 print(type(df), df, sep='\n', end='\n\n')
 
 # '수학' 점수 데이터만 선택. 변수 math1에 저장
+print("Series 반환")
 math1 = df['수학']
 print(type(math1), math1, sep='\n', end='\n\n')
 
@@ -17,6 +18,7 @@ english = df.영어
 print(type(english), english, sep='\n', end='\n\n')
 
 # '음악', '체육' 점수 데이터를 선택. 변수 music_gym 에 저장
+print("DataFrame 반환")
 music_gym = df[['음악', '체육']]
 print(type(music_gym), music_gym, sep='\n', end='\n\n')
 

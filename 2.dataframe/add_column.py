@@ -12,4 +12,10 @@ df = pd.DataFrame(exam_data)
 print(df, end='\n\n')
 
 df['국어'] = 80
-print("# 데이터프레임 df에 '국어' 점수 열(column)을 추가. 데이터 값은 80 지정", df, sep='\n')
+print("# 데이터프레임 df에 '국어' 점수 열(column)을 추가. 데이터 값은 80 지정", df, sep='\n', end='\n\n')
+
+df['평균'] = round(df.mean(axis=1), 2)
+df['총점'] = df.sum(axis=1)
+print("# 데이터프레임 df에 '평균', '총점' 열(column)을 추가", df, sep='\n', end='\n\n')
+
+print(type(df.mean(axis=1)))

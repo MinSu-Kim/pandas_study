@@ -1,7 +1,4 @@
-import pandas as pd
-
-df = pd.DataFrame([[15, '남', '덕영중'], [17, '여', '수리중']], index=['준서', '예은'],  columns=['나이', '성별', '학교'])
-print('행 인덱스/열 이름 지정하여, 데이터프레임 만들기',df, df.index, df.columns, sep='\n', end='\n\n')
+from list_to_dataframe import df
 
 df.index = ['학생1', '학생2']
 df.columns = ['연령', '남녀', '소속']

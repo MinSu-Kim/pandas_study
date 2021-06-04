@@ -8,7 +8,6 @@ print(df.head(), sep='\n', end='\n\n')
 print("df.age.max() = ", df.age.max(), ' ', "df.age.min() = ", df.age.min(), end='\n')
 print("df.fare.max() = ", df.fare.max(), ' ', "df.fare.min() = ", df.fare.min(), end='\n\n')
 
-
 # 사용자 함수 정의
 def min_max(x):  # 최대값 - 최소값
     return x.max() - x.min()

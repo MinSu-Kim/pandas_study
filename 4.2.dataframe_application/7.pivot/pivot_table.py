@@ -55,6 +55,7 @@ print()
 print("pdf3.xs(('Second', 'male'), level=[0, 'sex'])",'\n',pdf3.xs(('Second', 'male'), level=[0, 'sex']))  # Second, male인 행을 선택
 print()
 
+
 print("# xs 인덱서 사용 - 열 선택(axis=1 설정)")
 print("pdf3.xs('mean', axis=1)", '\n', pdf3.xs('mean', axis=1))  # 열 인덱스가 mean인 데이터를 선택
 print()
@@ -63,3 +64,5 @@ print()
 print("pdf3.xs(1, level='survived', axis=1)",'\n',pdf3.xs(1, level='survived', axis=1))  # survived 레벨이 1인 데이터 선택
 print()
 print("pdf3.xs(('max', 'fare', 0), level=[0, 1, 2], axis=1)", '\n', pdf3.xs(('max', 'fare', 0), level=[0, 1, 2], axis=1))  # max, fare, survived=0인 데이터 선택
+
+

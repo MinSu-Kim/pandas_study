@@ -1,7 +1,8 @@
 import pandas as pd
 
 list_data = ['2019-01-02', 3.14, 'ABC', 100, True]
-sr = pd.Series(data=list_data, index=['a', 'b', 'c', 'd', 'e'])
+list_index = ['a', 'b', 'c', 'd', 'e']
+sr = pd.Series(data=list_data, index=list_index)
 
 print(sr, sep='\n', end='\n\n')
 

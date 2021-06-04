@@ -19,7 +19,7 @@ position1 = df.iloc[0]  # iloc 인덱서 활용
 print('position1', position1, sep='\n', end='\n\n')
 
 ############################################################
-print('# 행 인덱스를 사용하여 2개 이상의 행 선택')
+print('# 행 인덱스를 사용하여 2개 이상의 행 선택 - list이용')
 label2 = df.loc[['서준', '우현']]
 print('label2', label2, sep='\n', end='\n\n')
 

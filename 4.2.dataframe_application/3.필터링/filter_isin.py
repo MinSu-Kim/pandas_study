@@ -4,8 +4,8 @@ import numpy as np
 
 # 디스플레이 설정 변경 - 출력할 최대 열의 개수
 desired_width = 600
-pd.set_option ( 'display.width', desired_width)
-np.set_printoptions(linewidth = desired_width)
+pd.set_option( 'display.width', desired_width)
+# np.set_printoptions(linewidth= desired_width)
 pd.set_option('display.max_columns', 15)
 
 # titanic 데이터셋 로딩
