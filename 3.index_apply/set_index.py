@@ -1,11 +1,6 @@
 import pandas as pd
-exam_data = {
-    '이름': ['서준', '우현', '인아'],
-    '수학': [90, 80, 70],
-    '영어': [98, 89, 95],
-    '음악': [85, 95, 100],
-    '체육': [100, 90, 90]
-}
+from test_data import exam_data
+
 df = pd.DataFrame(exam_data)
 print(df, end='\n\n')
 

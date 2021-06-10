@@ -5,7 +5,8 @@ pd.set_option('display.max_columns', 15)   # 출력할 최대 열의 개수
 pd.set_option('display.width', 600)        # 출력 전체폭 너비
 
 titanic = sns.load_dataset('titanic')
-print('titanic', pd.DataFrame(titanic).head(), sep='\n', end='\n\n')
+print('titanic', pd.DataFrame(titanic).head(), titanic, sep='\n', end='\n\n')
+
 
 print("# titanic 데이터셋에서 age, fare 2개 열을 선택하여 데이터프레임 만들기")
 df = titanic.loc[:, ['age', 'fare']]
@@ -13,9 +14,9 @@ print(df.head(), end='\n\n')
 
 print("# df 에서 ten 열을 추가")
 df['ten'] = 10
-print(df.head())
+print(df)
 print()
-
+"""
 
 def add_10(n):  # 10을 더하는 함수
     return n + 10
@@ -45,3 +46,4 @@ print(sr3.head(), end='\n\n')
 print("# 람다 함수 활용: 시리즈 객체에 적용2")
 sr4 = df['age'].apply(lambda x: x + 20)  # x=df['age']
 print(sr4.head())
+"""

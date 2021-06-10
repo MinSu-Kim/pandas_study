@@ -72,12 +72,14 @@ test_labels = to_categorical(test_labels)
 
 # 모델 구조 정의하기 (신경망 생성, 여기에서는 Sequential 클래스 사용)
 # 뉴런의 개수 : 512, 뉴련출력에 적용할 함수 : relu, 입력크기(28*28) 밀집층 추가( 완전연결층 )
-dense1 = layers.Dense(100, activation='relu', input_shape=(28 * 28,), name="hidden1")
+dense1 = layers.Dense(512, activation='relu', input_shape=(28 * 28,), name="hidden1")
 # 뉴런의 개수 : 10, 뉴련출력에 적용할 함수 : softmax, 입력 앞의 층 (은닉층)
-dense3 = layers.Dense(50, activation='relu', name="hidden2")
-drop4 = layers.Dropout(0.4) # overfit 감소 40%
+# dense3 = layers.Dense(50, activation='relu', name="hidden2")
+# drop4 = layers.Dropout(0.4) # overfit 감소 40%
 dense2 = layers.Dense(10, activation='softmax', name="output")
-model = models.Sequential([dense1, dense3, drop4, dense2])
+# model = models.Sequential([dense1, dense3, drop4, dense2])
+# model = models.Sequential([dense1, drop4, dense2])
+model = models.Sequential([dense1, dense2])
 
 # model 요약
 print("model 요약")
@@ -98,13 +100,13 @@ print()
 
 # model.compile(optimizer='Nadam', loss='categorical_crossentropy', metrics=['accuracy'])
 # model.compile(optimizer='AdaMax', loss='categorical_crossentropy', metrics=['accuracy'])
-model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+# model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 # model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-# model.compile(optimizer='AdaGrad', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='AdaGrad', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # fit() 메서드로 모델 훈련 시키기 : 128개씩 5번 반복
-print("fit() 메서드로 모델 훈련 시키기 : 128개씩 10번 반복")
-history = model.fit(train_images, train_labels, epochs=10, batch_size=128, validation_data=(test_images, test_labels))
+print("fit() 메서드로 모델 훈련 시키기 : 128개씩 5번 반복")
+history = model.fit(train_images, train_labels, epochs=5, batch_size=128, validation_data=(test_images, test_labels))
 # history = model.fit(train_images, train_labels, validation_data=(test_images, test_labels))
 # model.fit(train_images, train_labels, epochs=5)
 print()

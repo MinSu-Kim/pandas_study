@@ -76,10 +76,10 @@ test_labels = to_categorical(test_labels)
 dense1 = layers.Dense(100, activation='relu', input_shape=(28 * 28,), name="hidden1")
 # 뉴런의 개수 : 10, 뉴련출력에 적용할 함수 : softmax, 입력 앞의 층 (은닉층)
 dense3 = layers.Dense(50, activation='relu', name="hidden2")
-drop4 = layers.Dropout(0.4)  # overfit 감소 40%
+# drop4 = layers.Dropout(0.4)  # overfit 감소 40%
 dense2 = layers.Dense(10, activation='softmax', name="output")
-model = models.Sequential([dense1, dense3, drop4, dense2])
-# model = models.Sequential([dense1, dense3, dense2])
+# model = models.Sequential([dense1, dense3, drop4, dense2])
+model = models.Sequential([dense1, dense3, dense2])
 
 # model 요약
 print("model 요약")

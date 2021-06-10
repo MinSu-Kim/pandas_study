@@ -13,23 +13,23 @@ print('exam_data', df, sep='\n', end='\n\n')
 ############################################################
 print('# 행 인덱스를 사용하여 행 1개를 선택')
 label1 = df.loc['서준']  # loc 인덱서 활용
-print('label1', label1, sep='\n', end='\n\n')
+print('label1', type(label1), label1, sep='\n', end='\n\n')
 
 position1 = df.iloc[0]  # iloc 인덱서 활용
-print('position1', position1, sep='\n', end='\n\n')
+print('position1', type(position1), position1, sep='\n', end='\n\n')
 
 ############################################################
 print('# 행 인덱스를 사용하여 2개 이상의 행 선택 - list이용')
 label2 = df.loc[['서준', '우현']]
-print('label2', label2, sep='\n', end='\n\n')
+print('label2', type(label2), label2, sep='\n', end='\n\n')
 
 position2 = df.iloc[[0, 1]]
-print('position2', position2, sep='\n', end='\n\n')
+print('position2', type(position2), position2, sep='\n', end='\n\n')
 ###########################################################
 
 print('# 행 인덱스의 범위를 지정하여 행 선택')
 label3 = df.loc['서준':'우현']
-print('label3', label3, sep='\n', end='\n\n')
+print('label3', type(label3), label3, sep='\n', end='\n\n')
 
 position3 = df.iloc[0:1]
-print('position3', position3, sep='\n')
+print('position3', type(position3), position3, sep='\n')
