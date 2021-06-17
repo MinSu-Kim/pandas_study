@@ -8,27 +8,36 @@ exam_data = {'name': ['test1', 'test2', 'test3'],
              }
 
 df = pd.DataFrame(exam_data)
-print("# 데이터프레임 df", df, sep='\n', end='\n\n')
+print(df)
+print()
 
-df.set_index('name', inplace=True)
-print("# index name", df, sep='\n', end='\n\n')
+# df.set_index('name', inplace=True)
+# print(df, sep='\n', end='\n\n')
 
-sr_math = df.math
-print('math', sr_math, type(sr_math), sep='\n', end='\n\n')
+df = df.set_index('name')
+print(df, sep='\n', end='\n\n')
+
+# sr_math = df.math
+# print('math', sr_math, type(sr_math), sep='\n', end='\n\n')
 
 sr_test1 = df.loc['test1']
-print('sr_test1', sr_test1, type(sr_test1), sep='\n', end='\n\n')
+print(sr_test1, sep='\n', end='\n\n')
+print(df.loc['test1'], sep='\n', end='\n\n')
 
 sr_eng = df['eng']
-print('sr_eng', sr_eng, type(sr_eng), sep='\n', end='\n\n')
+print(sr_eng)
+print(df.eng)
+print()
 
 print("# 데이터프레임 df",  df, sep='\n', end='\n\n')
+
 add_dict = {'name': 'test4', 'math': None, 'eng': 99, 'music':99, 'kor':99}
 sr_add = pd.Series(add_dict, name=add_dict['name'])
 print(sr_add)
 df = df.reset_index()
 df = df.append(sr_add, ignore_index=True)
 df.set_index('name', inplace=True)
+
 print("# 데이터프레임 df",  df, sep='\n', end='\n\n')
 
 result2 = df.apply(lambda x: x.isnull(), axis=0)
