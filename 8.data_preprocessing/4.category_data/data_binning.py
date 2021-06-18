@@ -7,23 +7,23 @@ df.columns = ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'accel
 print("# horsepower 열의 고유값 확인", df['horsepower'].unique(), sep='\n', end='\n\n')
 
 nan_list = [int(i) for i, a in df['horsepower'].items() if a == "?"]
-print("'?' 데이터 검색 결과 : ", [(i, val) for i, val in df['horsepower'].items() if i in nan_list], end='\n\n')
+print("'?' 데이터 검색 결과 : ", df['horsepower'][nan_list], end='\n\n')
 
 # horsepower 열의 누락 데이터('?') 삭제하고 실수형으로 변환
 df['horsepower'].replace('?', np.nan, inplace=True)      # '?'을 np.nan으로 변경
 print("# horsepower 열의 고유값 확인", df['horsepower'].unique(), sep='\n', end='\n\n')
 
 nan_list = [int(i) for i, a in df['horsepower'].isna().items() if a is True]
-print("'?' 데이터 검색 결과 : ", [(i, val) for i, val in df['horsepower'].items() if i in nan_list], end='\n\n')
+print("'?' 데이터 검색 결과 : ", df['horsepower'][nan_list], end='\n\n')
 
 print("누락데이터 행을 삭제 전 행의 개수", df['horsepower'].shape)
 df.dropna(subset=['horsepower'], axis=0, inplace=True)   # 누락데이터 행을 삭제
-print("누락데이터 행을 삭제 후 행의 개수", df['horsepower'].shape)
+print("누락데이터 행을 삭제 후 행의 개수", df['horsepower'].shape, end='\n\n')
 
 
-print("# horsepower 열의 자료형 확인", df['horsepower'].dtypes, sep='\n', end='\n\n')
+print("# horsepower 열의 자료형 변환 전 확인 :", df['horsepower'].dtypes, sep='\t')
 df['horsepower'] = df['horsepower'].astype('float')      # 문자열을 실수형으로 변환
-print("# horsepower 열의 자료형 확인", df['horsepower'].dtypes, sep='\n', end='\n\n')
+print("# horsepower 열의 자료형 변환 후 확인 :", df['horsepower'].dtypes, sep='\t', end='\n\n')
 
 print("# np.histogram 함수로 3개의 bin으로 나누는 경계 값의 리스트 구하기")
 count, bin_dividers = np.histogram(df['horsepower'], bins=3)

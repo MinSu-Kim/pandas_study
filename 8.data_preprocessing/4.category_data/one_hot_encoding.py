@@ -32,6 +32,12 @@ print("# label encoder로 문자열 범주를 숫자형 범주로 변환")
 onehot_labeled = label_encoder.fit_transform(df['hp_bin'].head(15))
 print(onehot_labeled, '\n', type(onehot_labeled), '\n')
 
+##############################################
+from keras.utils import to_categorical
+onehot_labels = to_categorical(onehot_labeled)
+print("onehot_labels", onehot_labels, sep='\n', end='\n\n')
+##############################################
+
 print("# 2차원 행렬로 형태 변경")
 onehot_reshaped = onehot_labeled.reshape(len(onehot_labeled), 1)
 print(onehot_reshaped, '\n', type(onehot_reshaped), '\n')

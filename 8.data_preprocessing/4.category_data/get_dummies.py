@@ -25,7 +25,7 @@ print("# np.histogram 으로 3개의 bin으로 나누는 경계 값의 리스트
 count, bin_dividers = np.histogram(df['horsepower'], bins=3)
 
 print("count, bin_dividers")
-print(count, bin_dividers)
+print(count, bin_dividers, end='\n\n')
 
 # 3개의 bin에 이름 지정
 bin_names = ['저출력', '보통출력', '고출력']
@@ -39,3 +39,5 @@ df['hp_bin'] = pd.cut(x=df['horsepower'],  # 데이터 배열
 print("# hp_bin 열의 범주형 데이터를 더미 변수로 변환")
 horsepower_dummies = pd.get_dummies(df['hp_bin'])
 print(horsepower_dummies.head(15), '\n')
+
+print("df[['horsepower', 'hp_bin']].head(15)", '\n', df[['horsepower', 'hp_bin']].head(15), '\n')
